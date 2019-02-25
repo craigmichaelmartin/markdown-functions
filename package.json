@@ -1,0 +1,45 @@
+{
+  "name": "markdown-functions",
+  "version": "0.0.0",
+  "browser": "src/markdown-functions.js",
+  "main": "src/markdown-functions.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "npm run test:unit && npm run test:format",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
+    "test:unit:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --verbose",
+    "test:format": "prettier -l \"**/*.{js,json,md}\" \"!src/**/*.spec.js\" \"!coverage/**/*\"",
+    "format": "prettier --write  \"**/*.{js,json,md}\" \"!src/**/*.spec.js\" \"!coverage/**/*\"",
+    "pub": "npm run test && np"
+  },
+  "dependencies": {
+    "insert-at-caret": "^0.0.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "np": "^3.1.0",
+    "prettier": "^1.9.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "author": "Craig Martin",
+  "description": "Javascript functions to apply markdown formatting syntaxes into a textarea.",
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "markdown",
+    "vanilla"
+  ]
+}
