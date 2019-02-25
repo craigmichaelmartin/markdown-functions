@@ -1,6 +1,6 @@
 {
   "name": "markdown-functions",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "browser": "src/markdown-functions.js",
   "main": "src/markdown-functions.js",
   "engines": {
