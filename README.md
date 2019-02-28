@@ -16,17 +16,18 @@ npm install --save markdown-functions
 
 ## API
 
-- toggleBold(body: HTMLTextAreaElement)
-- toggleItalics(body: HTMLTextAreaElement)
-- toggleStrikethrough(body: HTMLTextAreaElement)
-- toggleH1(body: HTMLTextAreaElement)
-- toggleH2(body: HTMLTextAreaElement)
-- toggleH3(body: HTMLTextAreaElement)
-- toggleH4(body: HTMLTextAreaElement)
-- addImage(body: HTMLTextAreaElement, url: string)
-- addLink(body: HTMLTextAreaElement)
-- addUnorderedList(body: HTMLTextAreaElement)
-- addOrderedList(body: HTMLTextAreaElement)
+- `toggleBold(body: HTMLTextAreaElement)`
+- `toggleItalics(body: HTMLTextAreaElement)`
+- `toggleStrikethrough(body: HTMLTextAreaElement)`
+- `toggleH1(body: HTMLTextAreaElement)`
+- `toggleH2(body: HTMLTextAreaElement)`
+- `toggleH3(body: HTMLTextAreaElement)`
+- `toggleH4(body: HTMLTextAreaElement)`
+- `addTab(body: HTMLTextAreaElement, url: string)`
+- `addImage(body: HTMLTextAreaElement, url: string)`
+- `addLink(body: HTMLTextAreaElement)`
+- `addUnorderedList(body: HTMLTextAreaElement)`
+- `addOrderedList(body: HTMLTextAreaElement)`
 
 ## TODO
 

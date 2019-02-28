@@ -1,11 +1,14 @@
-var insertAtCaret = require('../../util/insert-at-caret').insertAtCaret;
+var insertAtTheCaret = require('insert-at-caret').insertAtTheCaret;
 var isNumeric = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
-
 var adjustBodySize = function(body) {
   body.style.height = 'auto';
   body.style.height = body.scrollHeight + 'px';
+};
+
+var addTab = function(body) {
+  insertAtTheCaret(body, '    ');
 };
 
 var addImage = function(body, url) {
@@ -18,7 +21,7 @@ var addImage = function(body, url) {
       ')'
     );
   };
-  insertAtCaret(body, fn);
+  insertAtTheCaret(body, fn);
   adjustBodySize();
 };
 
@@ -26,23 +29,23 @@ var addLink = function(body) {
   var fn = function(highlighted) {
     return '[' + (highlighted || 'Link Text') + '](Link Url)';
   };
-  insertAtCaret(body, fn);
+  insertAtTheCaret(body, fn);
 };
 
 var toggleBold = function(body) {
-  insertAtCaret(body, { surround: '**' });
+  insertAtTheCaret(body, { surround: '**' });
 };
 
 var toggleItalics = function(body) {
-  insertAtCaret(body, { surround: '_' });
+  insertAtTheCaret(body, { surround: '_' });
 };
 
 var toggleStrikethrough = function(body) {
-  insertAtCaret(body, { surround: '~~' });
+  insertAtTheCaret(body, { surround: '~~' });
 };
 
 var addH1 = function(body) {
-  insertAtCaret(body, {
+  insertAtTheCaret(body, {
     startLineChars: '# ',
     toggle: true,
     removeFirstX: function(line) {
@@ -56,7 +59,7 @@ var addH1 = function(body) {
 };
 
 var addH2 = function(body) {
-  insertAtCaret(body, {
+  insertAtTheCaret(body, {
     startLineChars: '## ',
     toggle: true,
     removeFirstX: function(line) {
@@ -70,7 +73,7 @@ var addH2 = function(body) {
 };
 
 var addH3 = function(body) {
-  insertAtCaret(body, {
+  insertAtTheCaret(body, {
     startLineChars: '### ',
     toggle: true,
     removeFirstX: function(line) {
@@ -84,7 +87,7 @@ var addH3 = function(body) {
 };
 
 var addH4 = function(body) {
-  insertAtCaret(body, {
+  insertAtTheCaret(body, {
     startLineChars: '#### ',
     toggle: true,
     removeFirstX: function(line) {
@@ -98,7 +101,7 @@ var addH4 = function(body) {
 };
 
 var addUnorderedList = function(body) {
-  insertAtCaret(body, {
+  insertAtTheCaret(body, {
     newLineChars: '- ',
     newline: true,
     prefix: function(preceding) {
@@ -124,7 +127,7 @@ var addUnorderedList = function(body) {
 };
 
 var addOrderedList = function(body) {
-  insertAtCaret(body, {
+  insertAtTheCaret(body, {
     newLineChars: '1. ',
     newline: true,
     prefix: function(preceding) {
@@ -157,11 +160,12 @@ var addOrderedList = function(body) {
 };
 
 module.exports = {
-  addImage: addImage,
-  addLink: addLink,
   toggleBold: toggleBold,
   toggleItalics: toggleItalics,
   toggleStrikethrough: toggleStrikethrough,
+  addTab: addTab,
+  addImage: addImage,
+  addLink: addLink,
   addH1: addH1,
   addH2: addH2,
   addH3: addH3,

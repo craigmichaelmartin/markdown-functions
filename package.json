@@ -41,5 +41,9 @@
     "javascript",
     "markdown",
     "vanilla"
+  ],
+  "files": [
+    "src/markdown-functions.js",
+    "LICENSE"
   ]
 }
