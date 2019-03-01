@@ -1,4 +1,4 @@
-var insertAtTheCaret = require('insert-at-caret').insertAtTheCaret;
+var insertAtTheCaret = require('insert-at-the-caret').insertAtTheCaret;
 var isNumeric = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
