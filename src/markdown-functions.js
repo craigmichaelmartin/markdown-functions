@@ -90,7 +90,7 @@ var addImage = function(body, url) {
     );
   };
   insertAtTheCaret(body, fn);
-  adjustBodySize();
+  adjustBodySize(body);
 };
 
 var addLink = function(body) {
