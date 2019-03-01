@@ -7,6 +7,74 @@ var adjustBodySize = function(body) {
   body.style.height = body.scrollHeight + 'px';
 };
 
+var toggleBold = function(body) {
+  insertAtTheCaret(body, { surround: '**' });
+};
+
+var toggleItalics = function(body) {
+  insertAtTheCaret(body, { surround: '_' });
+};
+
+var toggleStrikethrough = function(body) {
+  insertAtTheCaret(body, { surround: '~~' });
+};
+
+var toggleH1 = function(body) {
+  insertAtTheCaret(body, {
+    startLineChars: '# ',
+    toggle: true,
+    removeFirstX: function(line) {
+      var val = 0;
+      ['## ', '### ', '#### '].some(function(starter) {
+        return line.indexOf(starter) === 0 && (val = starter.length);
+      });
+      return val;
+    }
+  });
+};
+
+var toggleH2 = function(body) {
+  insertAtTheCaret(body, {
+    startLineChars: '## ',
+    toggle: true,
+    removeFirstX: function(line) {
+      var val = 0;
+      ['# ', '### ', '#### '].some(function(starter) {
+        return line.indexOf(starter) === 0 && (val = starter.length);
+      });
+      return val;
+    }
+  });
+};
+
+var toggleH3 = function(body) {
+  insertAtTheCaret(body, {
+    startLineChars: '### ',
+    toggle: true,
+    removeFirstX: function(line) {
+      var val = 0;
+      ['# ', '## ', '#### '].some(function(starter) {
+        return line.indexOf(starter) === 0 && (val = starter.length);
+      });
+      return val;
+    }
+  });
+};
+
+var toggleH4 = function(body) {
+  insertAtTheCaret(body, {
+    startLineChars: '#### ',
+    toggle: true,
+    removeFirstX: function(line) {
+      var val = 0;
+      ['# ', '## ', '### '].some(function(starter) {
+        return line.indexOf(starter) === 0 && (val = starter.length);
+      });
+      return val;
+    }
+  });
+};
+
 var addTab = function(body) {
   insertAtTheCaret(body, '    ');
 };
@@ -30,74 +98,6 @@ var addLink = function(body) {
     return '[' + (highlighted || 'Link Text') + '](Link Url)';
   };
   insertAtTheCaret(body, fn);
-};
-
-var toggleBold = function(body) {
-  insertAtTheCaret(body, { surround: '**' });
-};
-
-var toggleItalics = function(body) {
-  insertAtTheCaret(body, { surround: '_' });
-};
-
-var toggleStrikethrough = function(body) {
-  insertAtTheCaret(body, { surround: '~~' });
-};
-
-var addH1 = function(body) {
-  insertAtTheCaret(body, {
-    startLineChars: '# ',
-    toggle: true,
-    removeFirstX: function(line) {
-      var val = 0;
-      ['## ', '### ', '#### '].some(function(starter) {
-        return line.indexOf(starter) === 0 && (val = starter.length);
-      });
-      return val;
-    }
-  });
-};
-
-var addH2 = function(body) {
-  insertAtTheCaret(body, {
-    startLineChars: '## ',
-    toggle: true,
-    removeFirstX: function(line) {
-      var val = 0;
-      ['# ', '### ', '#### '].some(function(starter) {
-        return line.indexOf(starter) === 0 && (val = starter.length);
-      });
-      return val;
-    }
-  });
-};
-
-var addH3 = function(body) {
-  insertAtTheCaret(body, {
-    startLineChars: '### ',
-    toggle: true,
-    removeFirstX: function(line) {
-      var val = 0;
-      ['# ', '## ', '#### '].some(function(starter) {
-        return line.indexOf(starter) === 0 && (val = starter.length);
-      });
-      return val;
-    }
-  });
-};
-
-var addH4 = function(body) {
-  insertAtTheCaret(body, {
-    startLineChars: '#### ',
-    toggle: true,
-    removeFirstX: function(line) {
-      var val = 0;
-      ['# ', '## ', '### '].some(function(starter) {
-        return line.indexOf(starter) === 0 && (val = starter.length);
-      });
-      return val;
-    }
-  });
 };
 
 var addUnorderedList = function(body) {
@@ -163,13 +163,13 @@ module.exports = {
   toggleBold: toggleBold,
   toggleItalics: toggleItalics,
   toggleStrikethrough: toggleStrikethrough,
+  toggleH1: toggleH1,
+  toggleH2: toggleH2,
+  toggleH3: toggleH3,
+  toggleH4: toggleH4,
   addTab: addTab,
   addImage: addImage,
   addLink: addLink,
-  addH1: addH1,
-  addH2: addH2,
-  addH3: addH3,
-  addH4: addH4,
   addUnorderedList: addUnorderedList,
   addOrderedList: addOrderedList
 };
