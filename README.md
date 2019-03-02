@@ -14,6 +14,10 @@ npm install --save markdown-functions
 
 `markdown-functions` are javascript functions to apply markdown formatting syntaxes into a textarea. They each accept an HTMLTextAreaElement. The functions intelligently handle selected text when applying the formatting, and for text styling transforms, they intelligently toggle on/off.
 
+## Demo
+
+`markdown-functions` power (`markdown-textarea-editor`)[https://github.com/craigmichaelmartin/markdown-textarea-editor] which has a demo https://craigmichaelmartin.github.io/markdown-textarea-editor/
+
 ## API
 
 - `toggleBold(body: HTMLTextAreaElement)`
