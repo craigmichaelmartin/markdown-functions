@@ -16,7 +16,7 @@ npm install --save markdown-functions
 
 ## Demo
 
-`markdown-functions` power (`markdown-textarea-editor`)[https://github.com/craigmichaelmartin/markdown-textarea-editor] which has a demo https://craigmichaelmartin.github.io/markdown-textarea-editor/
+`markdown-functions` powers [`markdown-textarea-editor`](https://github.com/craigmichaelmartin/markdown-textarea-editor) which has a demo https://craigmichaelmartin.github.io/markdown-textarea-editor/
 
 ## API
 
