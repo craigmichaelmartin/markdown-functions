@@ -16,7 +16,7 @@
     "pub": "npm run test && np"
   },
   "dependencies": {
-    "insert-at-the-caret": "^0.0.2"
+    "insert-at-the-caret": "^1.0.0"
   },
   "devDependencies": {
     "jest": "^24.1.0",
